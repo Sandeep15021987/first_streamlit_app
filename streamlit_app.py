@@ -45,13 +45,12 @@ streamlit.text("fruit_load_list contains:")
 streamlit.dataframe(my_data_rows)
 
 
-fruit_choice = streamlit.text_input('What fruit would you like to add')
-streamlit.write('The user entered ', fruit_choice)
-add_my_furite = requests.put("https://fruityvice.com/api/fruit/"+fruit_choice)
 
 
 fruit_choice = streamlit.text_input('What fruit would you like to add')
 streamlit.write('The user entered ', fruit_choice)
-add_my_furite = requests.put("https://fruityvice.com/api/fruit/"+fruit_choice)
-streamlit.text(add_my_furite.json())
+add_my_furite = requests.post("https://fruityvice.com/api/fruit/", data=fruit_choice)
+
+
+
 
